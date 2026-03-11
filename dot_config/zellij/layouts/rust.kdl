@@ -1,0 +1,17 @@
+layout {
+    tab name="Rust Dev" {
+        pane name="Editor" {
+            command "helix"
+        }
+
+        floating_panes {
+            pane name="Cargo" {
+                command "bash"
+                x "10%"
+                y "10%"
+                width "80%"
+                height "80%"
+            }
+        }
+    }
+}

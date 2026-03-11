@@ -1,0 +1,272 @@
+
+* {
+    font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;  /* Slightly smaller font size */
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+}
+
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 3px;
+    min-height: 0;
+    margin: 0.17em 0.3em;
+}
+
+/* The whole bar */
+#waybar {
+    background-color: #2E3440;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    border-radius: 0px;
+    padding: 10px;
+    margin: 10px;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces {
+    background-color: rgba(77, 92, 120, 0.5);
+    border-radius: 5px;
+}
+
+#workspaces button {
+    padding: 0em 0.3em;  /* Adjusted padding to reduce height */
+    border-radius: 5px;
+    color: @foreground;
+    transition: all 0.3s ease-in-out;
+    font-size: 1em;  /* Slightly smaller font size */
+}
+
+#workspaces button.active {
+    color: @foreground;
+    background: #8968CD;
+}
+
+#workspaces button:hover {
+    background: #333333;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#window {
+    font-size: 15px;   /* Slightly smaller font size */
+    font-weight: 800;
+    color: @foreground;
+    border-radius: 5px;
+    padding: 2px 4px;  /* Reduced padding */
+    opacity: 1;
+}
+
+#clock,
+#battery,
+#window,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#tray-expander,
+#wireplumber,
+#custom-music,
+#mode,
+#idle_inhibitor,
+#mpd,
+#bluetooth,
+#custom-hyprPicker,
+#custom-screenshot_t,
+#custom-power-menu,
+#custom-power,
+#custom-music,
+#custom-weather,
+#custom-storage,
+#custom-weather.severe,
+#custom-weather.sunnyDay,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.default {
+    background-color: rgba(77, 92, 120, 0.5);
+    padding: 0em 0.6em;
+    border-radius: 5px;
+}
+
+#network {
+    padding-right: 10px;
+}
+
+#bluetooth {
+    padding-right: 10px;
+}
+
+#custom-power {
+    background-color: rgba(77, 92, 120, 1);
+    padding: 0em 1.3em;
+    font-size: 14px;
+}
+
+#custom-launcher {
+    background-color: #1b242b;
+    color: #6a92d7;
+    border-radius: 7.5px;
+    padding: 3px 6px;  /* Adjusted padding */
+}
+
+#custom-weather.severe {
+    color: #eb937d;
+}
+
+#custom-weather.sunnyDay {
+    color: #c2ca76;
+}
+
+#custom-weather.clearNight {
+    color: #cad3f5;
+}
+
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight {
+    color: #c2ddda;
+}
+
+#custom-weather.rainyDay,
+#custom-weather.rainyNight {
+    color: #5aaca5;
+}
+
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight {
+    color: #d6e7e5;
+}
+
+#custom-weather.default {
+    color: #dbd9d8;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+
+#backlight {
+    color: #8fbcbb;
+}
+
+#battery.charging,
+#battery.full,
+#battery.plugged {
+    color: #26a65b;
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(30, 34, 42, 0.5);
+        color: #abb2bf;
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#disk {
+    background-color: #964b00;
+}
+
+#bluetooth {
+    color: #707d9d;
+}
+
+#bluetooth.disconnected {
+    color: #f53c3c;
+}
+
+#network {
+    color: #b48ead;
+}
+
+#network.disconnected {
+    color: #f53c3c;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#custom-music {
+    font-family: "Fira Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+    background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+
+#language {
+    background: #00b093;
+    color: #740864;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background: #97e1ad;
+    color: #000000;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 0px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+window#waybar.empty #window {
+    opacity: 0;
+}

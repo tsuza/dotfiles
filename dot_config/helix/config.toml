@@ -1,0 +1,12 @@
+theme = "catppuccin_frappe"
+
+[keys.normal]
+";" = "command_mode"
+
+[editor]
+line-number = "relative"
+text-width = 100
+rulers = [101]
+
+[editor.statusline]
+left = ["mode", "spinner", "file-absolute-path", "read-only-indicator", "file-modification-indicator", "separator", "version-control"]

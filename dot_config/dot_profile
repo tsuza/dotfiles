@@ -1,0 +1,5 @@
+export BROWSER=firefox
+export TERM=alacritty
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
+[ -f "/home/suza/.ghcup/env" ] && . "/home/suza/.ghcup/env" # ghcup-env
