@@ -1,0 +1,39 @@
+packages:
+  arch:
+    pacman:
+      - alacritty
+      - hyprlock 
+      - hyprpaper
+      - hyprcursor
+      - hyprpicker
+      - discord
+      - spotify-launcher
+      - helix
+      - waybar
+      - impala
+      - bluetui
+      - gpu-screen-recorder
+      - awesome-terminal-fonts
+      - btop
+      - cups
+      - cups-filters
+      - cups-pdf
+      - fuzzel
+      - go
+      - mpv
+      - kooha
+      - nautilus
+      - nvtop
+      - python
+      - syncthing
+      - tinymist
+      - unrar
+      - unzip
+      - yazi
+      - zathura
+      - zellij
+      - ttf-fira-sans
+      - ttf-fira-mono
+      - ttf-firacode-nerd
+    aur:
+      - waybar-module-music-git  

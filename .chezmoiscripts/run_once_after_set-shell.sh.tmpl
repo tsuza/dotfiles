@@ -1,0 +1,11 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+set -eu
+
+FISH_BIN=$(which fish)
+
+if [ "$SHELL" != "$FISH_BIN" ]; then
+    chsh -s "$FISH_BIN" "$USER"
+fi
+
+{{ end -}}

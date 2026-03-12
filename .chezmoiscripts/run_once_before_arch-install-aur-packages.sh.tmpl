@@ -1,0 +1,19 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+set -eu
+
+# Install yay if not present
+if ! command -v yay &> /dev/null; then
+    echo "yay not found, installing..."
+    sudo pacman -S --needed --noconfirm yay
+fi
+
+# Install AUR packages if missing
+{{- range .packages.arch.aur }}
+if ! yay -Q {{ . }} &> /dev/null; then
+    echo "Installing AUR package: {{ . }}"
+    yay -S --needed --noconfirm {{ . }}
+fi
+{{- end }}
+
+{{ end -}}

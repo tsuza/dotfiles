@@ -1,0 +1,10 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+set -eu
+
+sudo pacman -S --needed --noconfirm \
+{{- range .packages.arch.pacman }}
+  {{ . }} \
+{{- end }}
+
+{{ end -}}
