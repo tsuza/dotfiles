@@ -31,6 +31,8 @@ packages:
       - unzip
       - yazi
       - zathura
+      - fastfetch
+      - starship
       - zellij
       - ttf-fira-sans
       - ttf-fira-mono
