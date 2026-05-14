@@ -15,15 +15,23 @@ end
 function M.copy()
     local dir, path = build_path()
 
-    hl.dsp.exec_cmd('mkdir -p "' .. dir .. '"')
-    hl.dsp.exec_cmd('flameshot gui -c -p "' .. path .. '"')
+    hl.dispatch(
+        hl.dsp.exec_cmd('mkdir -p "' .. dir .. '"')
+    )
+    hl.dispatch(
+        hl.dsp.exec_cmd('flameshot gui -c -p "' .. path .. '"')
+    )
 end
 
 function M.upload()
     local dir, path = build_path()
 
-    hl.dsp.exec_cmd('mkdir -p "' .. dir .. '"')
-    hl.dsp.exec_cmd('flameshot gui -u -p "' .. path .. '"')
+    hl.dispatch(
+        hl.dsp.exec_cmd('mkdir -p "' .. dir .. '"')
+    )
+    hl.dispatch(
+        hl.dsp.exec_cmd('flameshot gui -u -p "' .. path .. '"')
+    )
 end
 
 return M

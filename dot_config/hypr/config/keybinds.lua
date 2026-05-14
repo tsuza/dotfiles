@@ -38,11 +38,6 @@ end)
 
 hl.bind("ALT + KP_Subtract", function()
     hl.dsp.exec_cmd(programs.replay)
-    hl.notification.create({
-        text = "Replay saved",
-        color = color.mgreen,
-        duration = 1500
-    })
 end)
 
 hl.bind("ALT + KP_Add", function()
