@@ -32,6 +32,10 @@ packages:
       - yazi
       - zathura
       - fastfetch
+      - easyeffects
+      - lsp-plugins-lv2
+      - fluidsynth
+      - mda.lv2
       - starship
       - zellij
       - ttf-fira-sans

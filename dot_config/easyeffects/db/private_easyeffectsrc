@@ -5,6 +5,7 @@ inputDevice=alsa_input.usb-HP__Inc_HyperX_QuadCast_4111-00.analog-stereo
 [StreamOutputs]
 outputDevice=alsa_output.usb-C-Media_Electronics_Inc._USB_HIFI_AUDIO-00.analog-stereo
 plugins=equalizer#0
+useDefaultOutputDevice=false
 visiblePage=pluginsPage
 visiblePlugin=equalizer#0
 
