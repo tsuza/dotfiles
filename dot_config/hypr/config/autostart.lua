@@ -1,3 +1,5 @@
+local programs = require("config.variables")
+
 hl.on("hyprland.start", function()
     -- GPU Screen Recorder (replay buffer)
     hl.exec_cmd("systemctl disable --now --user gpu-screen-recorder && systemctl enable --now --user gpu-screen-recorder")
@@ -14,7 +16,7 @@ hl.on("hyprland.start", function()
     -- Polkit / audio effects / idle
     hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
     hl.exec_cmd("easyeffects --gapplication-service")
-    hl.exec_cmd(idleHandler)
+    hl.exec_cmd(programs.idlehandler)
     -- Slow-launch fix: propagate environment to systemd / dbus
     hl.exec_cmd("systemctl --user import-environment")
     hl.exec_cmd("hash dbus-update-activation-environment 2>/dev/null")

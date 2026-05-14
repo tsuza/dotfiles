@@ -1,4 +1,5 @@
 local programs = require("config.variables")
+local screenshot = require("config.scripts.screenshot")
 
 mainMod = "SUPER"
 
@@ -18,14 +19,49 @@ hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(
 ))
  
 -- Screenshots (flameshot)
-hl.bind("Print",       hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/flameshot_to_folder.sh"))
-hl.bind("SHIFT + Print", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/flameshot_to_folder_and_upload.sh"))
+hl.bind("Print", function()
+    screenshot.copy()
+end)
+hl.bind("SHIFT + Print", function()
+    screenshot.upload()
+end)
  
 -- GPU Screen Recorder
-hl.bind("SHIFT + ALT + KP_Subtract", hl.dsp.exec_cmd(programs.record))
-hl.bind("ALT + KP_Subtract",         hl.dsp.exec_cmd(programs.replay))
-hl.bind("ALT + KP_Add",              hl.dsp.exec_cmd(programs.replayLast10))
-hl.bind("ALT + KP_Multiply",         hl.dsp.exec_cmd(programs.replayLast30))
+hl.bind("SHIFT + ALT + KP_Subtract", function()
+    hl.dsp.exec_cmd("pkill -SIGRTMIN -f gpu-screen-recorder")
+    hl.notification.create({
+        text = "Recording toggled",
+        color = color.mgreen,
+        duration = 1500
+    })
+end)
+
+hl.bind("ALT + KP_Subtract", function()
+    hl.dsp.exec_cmd(programs.replay)
+    hl.notification.create({
+        text = "Replay saved",
+        color = color.mgreen,
+        duration = 1500
+    })
+end)
+
+hl.bind("ALT + KP_Add", function()
+    hl.dsp.exec_cmd(programs.replayLast10)
+    hl.notification.create({
+        text = "Replay (last 10s) saved",
+        color = color.mgreen,
+        duration = 1500
+    })
+end)
+
+hl.bind("ALT + KP_Multiply", function()
+    hl.dsp.exec_cmd(programs.replayLast30)
+    hl.notification.create({
+        text = "Replay (last 30s) saved",
+        color = color.mlgreen,
+        duration = 1500
+    })
+end)
  
 -- ── Volume ─────────────────────────────────────────────────────
 -- Raise volume (cap at 100%)

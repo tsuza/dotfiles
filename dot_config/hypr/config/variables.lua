@@ -12,13 +12,13 @@ local programs = {
     "~/.config/hypr/scripts/start-stop-recording.sh",
 
     replay =
-    "killall -SIGUSR1 gpu-screen-recorder && sleep 0.5 && notify-send -t 1500 -u low -- 'GPU Screen Recorder' 'Replay saved'",
+    "killall -SIGUSR1 gpu-screen-recorder && sleep 0.5",
 
     replayLast10 =
-    "pkill -SIGRTMIN+1 -f gpu-screen-recorder && sleep 0.5 && notify-send -t 1500 -u low -- 'GPU Screen Recorder' 'Replay saved'",
+    "pkill -SIGRTMIN+1 -f gpu-screen-recorder && sleep 0.5",
 
     replayLast30 =
-    "pkill -SIGRTMIN+2 -f gpu-screen-recorder && sleep 0.5 && notify-send -t 1500 -u low -- 'GPU Screen Recorder' 'Replay saved'",
+    "pkill -SIGRTMIN+2 -f gpu-screen-recorder && sleep 0.5",
 }
 
 return programs
