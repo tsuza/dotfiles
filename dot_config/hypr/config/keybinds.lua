@@ -28,34 +28,51 @@ end)
  
 -- GPU Screen Recorder
 hl.bind("SHIFT + ALT + KP_Subtract", function()
-    hl.dsp.exec_cmd("pkill -SIGRTMIN -f gpu-screen-recorder")
     hl.notification.create({
         text = "Recording toggled",
         color = color.mgreen,
         duration = 1500
     })
+
+    hl.dispatch(
+        hl.dsp.exec_cmd("pkill -SIGRTMIN -f gpu-screen-recorder")
+    )
 end)
 
 hl.bind("ALT + KP_Subtract", function()
-    hl.dsp.exec_cmd(programs.replay)
+    hl.notification.create({
+        text = "Replay (last 60s) saved",
+        color = color.mgreen,
+        duration = 1500
+    })
+
+    hl.dispatch(
+        hl.dsp.exec_cmd(programs.replay)
+    )
 end)
 
 hl.bind("ALT + KP_Add", function()
-    hl.dsp.exec_cmd(programs.replayLast10)
     hl.notification.create({
         text = "Replay (last 10s) saved",
         color = color.mgreen,
         duration = 1500
     })
+
+    hl.dispatch(
+        hl.dsp.exec_cmd(programs.replayLast10)
+    )
 end)
 
 hl.bind("ALT + KP_Multiply", function()
-    hl.dsp.exec_cmd(programs.replayLast30)
     hl.notification.create({
         text = "Replay (last 30s) saved",
-        color = color.mlgreen,
+        color = color.mgreen,
         duration = 1500
     })
+
+    hl.dispatch(
+        hl.dsp.exec_cmd(programs.replayLast30)
+    )
 end)
  
 -- ── Volume ─────────────────────────────────────────────────────
