@@ -1,6 +1,9 @@
 [StreamInputs]
 blocklist=gsr-default_input
 inputDevice=alsa_input.usb-HP__Inc_HyperX_QuadCast_4111-00.analog-stereo
+plugins=rnnoise#0,gate#0,equalizer#0,compressor#0,limiter#0
+visiblePage=pluginsPage
+visiblePlugin=compressor#0
 
 [StreamOutputs]
 outputDevice=alsa_output.usb-C-Media_Electronics_Inc._USB_HIFI_AUDIO-00.analog-stereo
@@ -13,6 +16,7 @@ visiblePlugin=equalizer#0
 forceBreezeTheme=false
 
 [Window]
-height=515
+height=1080
 showTrayIcon=false
-width=955
+visiblePage=inputPage
+width=1920

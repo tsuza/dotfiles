@@ -158,6 +158,15 @@ keybinds clear-defaults=true {
         bind "Alt l" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
         bind "Alt o" { MoveTab "right"; }
+        bind "Alt 1" { GoToTab 1; }
+        bind "Alt 2" { GoToTab 2; }
+        bind "Alt 3" { GoToTab 3; }
+        bind "Alt 4" { GoToTab 4; }
+        bind "Alt 5" { GoToTab 5; }
+        bind "Alt 6" { GoToTab 6; }
+        bind "Alt 7" { GoToTab 7; }
+        bind "Alt 8" { GoToTab 8; }
+        bind "Alt 9" { GoToTab 9; }
     }
     shared_except "locked" "renametab" "renamepane" {
         bind "Ctrl g" { SwitchToMode "locked"; }
@@ -254,8 +263,128 @@ load_plugins {
  
 // Choose the theme that is specified in the themes section.
 // Default: default
-// 
-// theme "dracula"
+themes {
+    nord_custom {
+        text_unselected {
+            base 229 233 240
+            background 59 66 82
+            emphasis_0 208 135 112
+            emphasis_1 136 192 208
+            emphasis_2 163 190 140
+            emphasis_3 137 104 205
+        }
+        text_selected {
+            base 229 233 240
+            background 59 66 82
+            emphasis_0 208 135 112
+            emphasis_1 136 192 208
+            emphasis_2 163 190 140
+            emphasis_3 137 104 205
+        }
+        ribbon_selected {
+            base 59 66 82
+            background 137 104 205
+            emphasis_0 191 97 106
+            emphasis_1 208 135 112
+            emphasis_2 229 233 240
+            emphasis_3 129 161 193
+        }
+        ribbon_unselected {
+            base 59 66 82
+            background 216 222 233
+            emphasis_0 191 97 106
+            emphasis_1 229 233 240
+            emphasis_2 129 161 193
+            emphasis_3 137 104 205
+        }
+        table_title {
+            base 163 190 140
+            background 0
+            emphasis_0 208 135 112
+            emphasis_1 136 192 208
+            emphasis_2 163 190 140
+            emphasis_3 137 104 205
+        }
+        table_cell_selected {
+            base 229 233 240
+            background 46 52 64
+            emphasis_0 208 135 112
+            emphasis_1 136 192 208
+            emphasis_2 163 190 140
+            emphasis_3 137 104 205
+        }
+        table_cell_unselected {
+            base 229 233 240
+            background 59 66 82
+            emphasis_0 208 135 112
+            emphasis_1 136 192 208
+            emphasis_2 163 190 140
+            emphasis_3 137 104 205
+        }
+        list_selected {
+            base 229 233 240
+            background 46 52 64
+            emphasis_0 208 135 112
+            emphasis_1 136 192 208
+            emphasis_2 163 190 140
+            emphasis_3 137 104 205
+        }
+        list_unselected {
+            base 229 233 240
+            background 59 66 82
+            emphasis_0 208 135 112
+            emphasis_1 136 192 208
+            emphasis_2 163 190 140
+            emphasis_3 137 104 205
+        }
+        frame_selected {
+            base 137 104 205
+            background 0
+            emphasis_0 208 135 112
+            emphasis_1 136 192 208
+            emphasis_2 137 104 205
+            emphasis_3 0
+        }
+        frame_highlight {
+            base 208 135 112
+            background 0
+            emphasis_0 137 104 205
+            emphasis_1 208 135 112
+            emphasis_2 208 135 112
+            emphasis_3 208 135 112
+        }
+        exit_code_success {
+            base 163 190 140
+            background 0
+            emphasis_0 136 192 208
+            emphasis_1 59 66 82
+            emphasis_2 137 104 205
+            emphasis_3 129 161 193
+        }
+        exit_code_error {
+            base 191 97 106
+            background 0
+            emphasis_0 235 203 139
+            emphasis_1 0
+            emphasis_2 0
+            emphasis_3 0
+        }
+        multiplayer_user_colors {
+            player_1 137 104 205
+            player_2 129 161 193
+            player_3 0
+            player_4 235 203 139
+            player_5 136 192 208
+            player_6 0
+            player_7 191 97 106
+            player_8 0
+            player_9 0
+            player_10 0
+        }
+    }
+}
+
+theme "nord_custom"
  
 // Choose the base input mode of zellij.
 // Default: normal
@@ -383,20 +512,20 @@ default_mode "locked"
 //   - true (default)
 //   - false
 // 
-// session_serialization false
+session_serialization true
  
 // Whether pane viewports are serialized along with the session, default is false
 // Options:
 //   - true
 //   - false (default)
 // 
-// serialize_pane_viewport false
+serialize_pane_viewport true
  
 // Scrollback lines to serialize along with the pane viewport when serializing sessions, 0
 // defaults to the scrollback size. If this number is higher than the scrollback size, it will
 // also default to the scrollback size. This does nothing if `serialize_pane_viewport` is not true.
 // 
-// scrollback_lines_to_serialize 10000
+scrollback_lines_to_serialize 0
  
 // Enable or disable the rendering of styled and colored underlines (undercurl).
 // May need to be disabled for certain unsupported terminals

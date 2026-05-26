@@ -14,12 +14,6 @@ hl.window_rule({ match = { class = "^(zenity)$" }, float = true })
 hl.window_rule({ match = { class = "^$", title = "^(Steam - Self Updater)$" }, float = true })
 hl.window_rule({ match = { class = "^(steam)$" }, float = true })
 
--- Opacity
-hl.window_rule({ match = { class = "^(thunar|nemo)$" }, opacity = "0.92" })
-hl.window_rule({ match = { class = "^(discord|armcord|webcord)$" }, opacity = "0.96" })
-hl.window_rule({ match = { title = "^(QQ|Telegram)$" }, opacity = "0.95" })
-hl.window_rule({ match = { title = "^(NetEase Cloud Music Gtk4)$" }, opacity = "0.95" })
-
 -- Picture-in-Picture float + size
 hl.window_rule({
     match   = { title = "^(Picture-in-Picture)$" },

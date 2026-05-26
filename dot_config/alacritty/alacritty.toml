@@ -2,8 +2,8 @@
 [window]
 title = "Terminal"
 decorations = "Full"
-blur = true
-opacity = 0.9
+blur = false
+opacity = 1.0
 padding.x = 10
 padding.y = 10
 

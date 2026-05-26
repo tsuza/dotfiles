@@ -2,9 +2,9 @@ local color = require("config.colors")
 
 hl.config({
     general = {
-        gaps_in    = 1,
+        gaps_in    = 2,
         gaps_out   = 0,
-        border_size = 2,
+        border_size = 3,
         col = {
             active_border   = color.cute,
             inactive_border = color.mblue,
@@ -14,12 +14,11 @@ hl.config({
     },
  
     decoration = {
-        active_opacity = 1,
         rounding       = 4,
+        active_opacity = 1.0,
+        inactive_opacity = 1.0,
         blur = {
-            size    = 15,
-            passes  = 2,
-            xray    = true,
+            enabled = false
         },
         shadow = { enabled = false },
     },
